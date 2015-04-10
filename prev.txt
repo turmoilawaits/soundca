@@ -1,0 +1,74 @@
+from sikuli.Sikuli import *
+import os
+myPath = os.path.dirname(getBundlePath())
+if not myPath in sys.path: sys.path.append(myPath)
+from soundCloudTestImages import *
+from util import *
+from regionDictionary import *
+    
+class soundCloudTest(util):
+	myImages = soundCloudTestImages()
+"""	
+	def searchForTermsFromDataFile(self):
+		for i in range(len(self.termsArr)):	
+			self.searchForMusic(self.termsArr[i]," Terms from data File ")
+			
+	def searchForTermsFromDataFile(self):
+			for i in range(len(self.termsArr)):	
+				self.searchFlight(self.termsArr[i])			
+"""			    			
+	def searchForMusic(self,term,testName):
+		try:
+			self.clearMouse()
+			self.reg.getReg("topHalf").click(self.myImages.getImage("searchButton"))
+			wait(2)
+			self.clearSearch()
+			type(term)
+			type(Key.ENTER)
+			wait(4)
+			if not exists(self.myImages.getImage("cantFindAnything")):				
+				self.passed(testName + term)				
+			else:				
+				self.failed(testName + term)								
+		except FindFailed:
+			self.failed(testName + term)
+
+
+	def clearSearch(self):
+		try:
+			self.reg.getReg("topHalf").click(self.myImages.getImage("searchButton"))
+			wait(2)
+			type("a",KEY_CTRL)
+			type(Key.DELETE)
+			wait(4)
+		except FindFailed:
+			self.failed("Clear Search  Field")
+"""
+	
+    def searchFlight(self,term):
+		try:
+			self.clearMouse()
+			if not exists(self.reg.getReg("leftHalf").click(self.myImages.getImage("alreadyOneWayTrip"))):				
+				self.reg.getReg("leftHalf").click(self.myImages.getImage("oneWayTrip"))	
+				wait(3)
+				for i in range(3):
+					type(Key.TAB)
+					wait(1)
+				self.clearTextFromTextField()
+				wait(2)
+				type(term)
+				wait(2)
+				type(Key)
+				type(Key.ENTER)
+				wait(10)
+		except FindFailed:
+			self.failed("Clear Search  Field")
+"""			
+				
+				
+			
+				
+			
+		
+		
+		

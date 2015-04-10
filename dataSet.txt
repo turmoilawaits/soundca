@@ -1,0 +1,11 @@
+[soundcloud]
+term = Greenday,ferggfj,James Blunt,Nirvana,mhgmhm
+
+[makemytrip]
+from = BOM,DEL
+to = DEL,PNQ
+
+[twitter]
+username = tweetsikuli
+emialid = sikulitestuser@gmail.com
+pass = sikuli@123
